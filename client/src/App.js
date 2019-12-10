@@ -7,6 +7,7 @@ import { Container, } from 'semantic-ui-react';
 class App extends React.Component {
   state = {
     menus: [],
+    items: [],
   }
 
   componentDidMount() {
@@ -56,7 +57,7 @@ class App extends React.Component {
       <Container>
         <h1>Test</h1> 
         <MenuForm addMenu={this.addMenu} updateMenu={this.updateMenu} /> 
-        <MenuList menus={this.state.menus} deleteMenu={this.deleteMenu} />    
+        <MenuList menus={this.state.menus} deleteMenu={this.deleteMenu} items={this.state.items} />    
       </Container>
     )
   }

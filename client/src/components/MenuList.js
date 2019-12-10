@@ -1,15 +1,22 @@
 import React from 'react';
-import { Button, } from 'semantic-ui-react';
+import MenuItems from './MenuItems';
+import { Button, Icon } from 'semantic-ui-react';
 
-const MenuList = ({menus, deleteMenu}) => (
+const MenuList = ({menus, deleteMenu, items}) => (
   <div>
     <br />
     { menus.map( menu => 
     <div>
-      <h2>{menu.name}</h2>
-      <Button>View Menu</Button>
-      <Button>Edit</Button>
-      <Button onClick={() => deleteMenu(menu.id)}>Delete</Button>
+      <h1>{menu.name}</h1>
+      <MenuItems  key={menu.id} deleteMenu={deleteMenu} {...items}/>
+      <br />
+      <Button 
+      icon
+      color="red"
+      size="tiny"
+      style={{ marginLeft: "15px" }}
+      // onClick={() => deleteMenu(props.id)}
+    ><Icon name="trash" /></Button> 
     </div>
       )
     }

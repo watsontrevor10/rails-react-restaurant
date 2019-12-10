@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_225341) do
+ActiveRecord::Schema.define(version: 2019_12_10_044149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.bigint "menu_id"
+    t.string "item_name"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_items_on_menu_id"
+  end
 
   create_table "menus", force: :cascade do |t|
     t.string "name"

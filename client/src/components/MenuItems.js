@@ -1,10 +1,12 @@
 import React from 'react';
+import {  } from 'semantic-ui-react';
 
-const MenuItems = ({ id, name, price, }) => (
+const MenuItems = (props) => (
   <div>
-    test
-    { name } { price }
+    <br />
+    <h3>{props.item_name}</h3> 
+    
   </div>
 )
 
-export default MenuItems 
+export default MenuItems; 

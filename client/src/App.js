@@ -18,6 +18,11 @@ class App extends React.Component {
      .catch( err => {
        console.log(err)
      })
+
+    axios.get('/api/menus/items')
+     .then( res => {
+       this.setState({ items: res.data, })
+     })
   }
 
   addMenu = (name) => {
